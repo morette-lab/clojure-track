@@ -1,0 +1,51 @@
+(require 'flatten-array)
+(defn pipipopopo [arr]
+  (do-flatten arr []))
+(defn do-flatten [arr acc-param]
+  (reduce (fn [acc item]
+            (if (vector? item) 
+              (do-flatten item acc) 
+              (conj acc item))) 
+          acc-param arr))
+(pipipopopo [1 2])
+(defn do-flatten [arr acc-param]
+  (reduce (fn [acc item]
+            (if (vector? item) 
+              (do-flatten item acc) 
+              (conj acc item))) 
+          acc-param arr))
+(defn pipipopopo [arr]
+  (do-flatten arr []))
+(pipipopopo [1])
+(pipipopopo [1 2 3])
+(pipipopopo [1 [2] 3])
+(pipipopopo [1 [2 3 4] 3])
+(pipipopopo [1 [2 3 4] 3 5 6])
+(require 'flatten-array)
+(flatten-array/flatten [1 2])
+(flatten-array/flatten [1 2 3 4])
+(flatten-array/flatten [1 2 [3] 4])
+(nil? nil)
+[1 2 [3 4] 2]
+[1]
+[1 2]
+(require 'flatten-array)
+(flatten [1 2])
+(flatten [1 2 3 4])
+(flatten-array/flatten [1 2 3 4])
+clear
+(require 'flatten-array)
+(flatten-array/flatten [1 2 3 4])
+clear
+(require 'flatten-array)
+(flatten-array/flatten [1 2 3])
+(flatten-array/flatten [1 [2] 3])
+(flatten-array/flatten [1 [2 3 4] 3])
+(flatten-array/flatten [1 [2 3 4] [3]])
+(flatten-array/flatten [1 2 [3] "1"])
+(require 'flatten-array)
+(flatten-array/flatten [1 2])
+(flatten-array/flatten [1 2 "1"])
+clear
+(flatten-array/flatten [1 2 1])
+(flatten-array/flatten [1 [2]])
