@@ -14,10 +14,9 @@
 (defn can-signal-prisoner?
   "Returns true if the prisoner can be signalled, false otherwise."
   [archer-awake? prisoner-awake?]
-  (def is-all-true? (and (true? archer-awake?) (true? prisoner-awake?)))
-  (if (or (false? prisoner-awake?) is-all-true?)
-    false
-    true))
+  (if (and (false? archer-awake?) (true? prisoner-awake?))
+    true
+    false))
 
 (defn can-free-prisoner?
   "Returns true if prisoner can be freed, false otherwise."
